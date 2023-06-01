@@ -77,15 +77,3 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`anuncio`(
     FOREIGN KEY (`id_inmueble`) REFERENCES `inmueble`(`id_inmueble`),
     FOREIGN KEY (`id_plataforma`) REFERENCES `plataforma`(`id_plataforma`)
 );
-
-CREATE TABLE IF NOT EXISTS `tfm_database`.`prueba`(
-    `id_anuncio` INT NOT NULL AUTO_INCREMENT,
-    `id_inmueble` INT NOT NULL,
-    `id_plataforma` INT NOT NULL,
-    `price` DECIMAL(10, 2),
-    `date` DATE,
-    `type` VARCHAR(50),
-    PRIMARY KEY (`id_anuncio`),
-    FOREIGN KEY (`id_inmueble`) REFERENCES `inmueble`(`id_inmueble`),
-    FOREIGN KEY (`id_plataforma`) REFERENCES `plataforma`(`id_plataforma`)
-);

@@ -1,12 +1,5 @@
 def create_database():
-    try:
-        import pymysql
-
-    except ModuleNotFoundError:
-        import pip
-        pip.main(['install', 'pymysql'])
-        import pymysql
-
+    import pymysql
 
     host = 'localhost'
     user = 'tfm_user'
@@ -21,10 +14,12 @@ def create_database():
 
         with open('database_schema.sql', 'r') as schema:
             database_schema = schema.read()
+        
+        database_schema = database_schema.replace('\n', '').split(';')[:-1]
+        for sql_command in database_schema:
+            cursor.execute(sql_command)
+            connection.commit()
 
-        cursor.execute(database_schema)
-        connection.commit()
-
-
+        print("\n--Base de datos creada correctamente--")
     except pymysql.OperationalError:
-        print("No existe la BBDD")
+        print("\n--No existe la Base de datos--")
