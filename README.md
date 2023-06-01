@@ -1,4 +1,4 @@
-# tfm_eae
+# TFM EAE
 
 ## requirements.txt 
     - paquetes necesarios para ejecutar el código correctamente.
