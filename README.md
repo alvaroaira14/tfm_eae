@@ -8,7 +8,7 @@
       insertar los datos...
 
 ### create_database.py 
-    - código Python que se conecta a la base de datos de MySQL y ejectuta database_schema.sql
+    - código Python que se conecta a la base de datos de MySQL y ejecuta database_schema.sql
 
 ### database_schema.sql
     - código SQL que permite crear las tablas en la base de datos (esquema de la base de datos)
