@@ -2,7 +2,7 @@ def create_database():
     import pymysql
 
     host = 'localhost'
-    user = 'root'
+    user = 'tfm_user'
     password = 'tfmdatabase1234'
     database = 'tfm_database'
 
