@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`ciudad` (
     `provincia` VARCHAR(255) NULL DEFAULT NULL,
     `municipio` VARCHAR(255) NULL DEFAULT NULL,
     PRIMARY KEY (`id_ciudad`)
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`direccion` (
     `id_direccion` INT NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`direccion` (
     `longitud` POINT NULL DEFAULT NULL,
     PRIMARY KEY (`id_direccion`),
     FOREIGN KEY (`id_ciudad`) REFERENCES `ciudad`(`id_ciudad`)
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`propietario`(
     `id_propietario` INT NOT NULL AUTO_INCREMENT,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`propietario`(
     `num_inmuebles` INT NULL DEFAULT NULL,
     `val_inmuebles` FLOAT NULL DEFAULT NULL,
     PRIMARY KEY (`id_propietario`)
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     `id_inmueble` INT NOT NULL AUTO_INCREMENT,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     PRIMARY KEY (`id_inmueble`),
     FOREIGN KEY (`id_direccion`) REFERENCES `direccion`(`id_direccion`),
     FOREIGN KEY (`id_propietario`) REFERENCES `propietario`(`id_propietario`)  
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`plataforma`(
     `id_plataforma` INT NOT NULL AUTO_INCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`plataforma`(
     `num_inmuebles` INT NULL DEFAULT NULL,
     `num_disponibles` INT NULL DEFAULT NULL,
     PRIMARY KEY (`id_plataforma`)
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`anuncio`(
     `id_anuncio` INT NOT NULL AUTO_INCREMENT,
@@ -75,4 +75,4 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`anuncio`(
     PRIMARY KEY (`id_anuncio`),
     FOREIGN KEY (`id_inmueble`) REFERENCES `inmueble`(`id_inmueble`),
     FOREIGN KEY (`id_plataforma`) REFERENCES `plataforma`(`id_plataforma`)
-)AUTO_INCREMENT = 0;
+)AUTO_INCREMENT = 1;
