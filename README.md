@@ -13,8 +13,7 @@
     - código SQL que permite crear las tablas en la base de datos (esquema de la base de datos)
 
 ### etl1.py
-    - código python que mediante pandas lee el archivo house_price_madrid_14_08_2022.csv y 
-      transforma la información en el formato de las tablas de la base de datos para ser
+    - código python que mediante pandas lee el archivo house_price_madrid_14_08_2022.csv y transforma la información en el formato de las tablas de la base de datos para ser
       insertado en sus respectivas tablas.
 
 ### funciones.py
