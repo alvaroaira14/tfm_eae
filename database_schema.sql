@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`ciudad` (
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`direccion` (
     `id_direccion` INT NOT NULL AUTO_INCREMENT,
-    `id_ciudad` INT NULL DEFAULT NULL,
+    `id_ciudad` INT NOT NULL,
     `calle` VARCHAR(255) NULL DEFAULT NULL,
     `numero` INT NULL DEFAULT NULL,
     `piso` VARCHAR(255) NULL DEFAULT NULL,
@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`plataforma`(
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`anuncio`(
     `id_anuncio` INT NOT NULL AUTO_INCREMENT,
-    `id_inmueble` INT NULL DEFAULT NULL,
-    `id_plataforma` INT NULL DEFAULT NULL,
+    `id_inmueble` INT NOT NULL,
+    `id_plataforma` INT NOT NULL,
     `precio` DECIMAL(10, 2),
     `fecha` DATE,
     `tipo` VARCHAR(50),
