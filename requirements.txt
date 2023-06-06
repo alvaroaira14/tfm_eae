@@ -1,6 +1,7 @@
 numpy
 pandas
 pymysql
+scikit-learn
 # pydrive
 # pyspark
 # mysql-connector-python
