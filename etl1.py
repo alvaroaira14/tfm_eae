@@ -8,7 +8,7 @@ df = pd.read_csv(path)
 df_sin_nulos = df.dropna()
 id_column = list(range(1, df_sin_nulos.shape[0] + 1))
 cols_groupby = ["house_type", "house_type_2", "rooms", "m2", "elevator", "garage", "neighborhood", "district"]
-df_sin_nulos.loc[:, "id_inmueble"] = df_sin_nulos.groupby(cols_groupby).ngroup() + 1
+df_sin_nulos.insert(loc=1, column='id_inmueble', value=df_sin_nulos.set_index(cols_groupby).index.factorize()[0]+1)
 
 
 #Preparar tabla inmueble
