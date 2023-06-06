@@ -1,7 +1,4 @@
-numpy
-pandas
-pymysql
-scikit-learn
-# pydrive
-# pyspark
-# mysql-connector-python
+numpy==1.21.6
+pandas==1.3.5
+pymysql==1.0.3
+scikit-learn==1.0.2
