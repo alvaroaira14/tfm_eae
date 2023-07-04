@@ -22,18 +22,8 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`direccion` (
     FOREIGN KEY (`id_ciudad`) REFERENCES `ciudad`(`id_ciudad`)
 )AUTO_INCREMENT = 1;
 
-CREATE TABLE IF NOT EXISTS `tfm_database`.`propietario`(
-    `id_propietario` INT NOT NULL AUTO_INCREMENT,
-    `nombre` VARCHAR(255) NULL DEFAULT NULL,
-    `apellidos` VARCHAR(255) NULL DEFAULT NULL,
-    `num_inmuebles` INT NULL DEFAULT NULL,
-    `val_inmuebles` FLOAT NULL DEFAULT NULL,
-    PRIMARY KEY (`id_propietario`)
-)AUTO_INCREMENT = 1;
-
 CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     `id_inmueble` INT NOT NULL AUTO_INCREMENT,
-    `id_propietario` INT NULL DEFAULT NULL,
     `id_direccion` INT NULL DEFAULT NULL,
     `descripcion` VARCHAR(255) NULL DEFAULT NULL,
     `num_habitaciones` INT NULL DEFAULT NULL,
@@ -53,7 +43,6 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     `orientacion` VARCHAR(255) NULL DEFAULT NULL,
     PRIMARY KEY (`id_inmueble`),
     FOREIGN KEY (`id_direccion`) REFERENCES `direccion`(`id_direccion`),
-    FOREIGN KEY (`id_propietario`) REFERENCES `propietario`(`id_propietario`)  
 )AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`plataforma`(
