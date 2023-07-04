@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     `estado` VARCHAR(255) NULL DEFAULT NULL,
     `orientacion` VARCHAR(255) NULL DEFAULT NULL,
     PRIMARY KEY (`id_inmueble`),
-    FOREIGN KEY (`id_direccion`) REFERENCES `direccion`(`id_direccion`),
+    FOREIGN KEY (`id_direccion`) REFERENCES `direccion`(`id_direccion`)
 )AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS `tfm_database`.`plataforma`(
