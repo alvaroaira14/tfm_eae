@@ -3,7 +3,7 @@ import pymysql
 from funciones import insert_data
 
 
-path = "../house_price_madrid_14_08_2022.csv"
+path = "../tfm_datos/house_price_madrid_14_08_2022.csv"
 df = pd.read_csv(path)
 df_sin_nulos = df.dropna()
 id_column = list(range(1, df_sin_nulos.shape[0] + 1))
