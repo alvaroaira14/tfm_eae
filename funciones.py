@@ -9,3 +9,6 @@ def insert_data(df, table_name, cursor):
     for i in range(0, len(values), batch_size):
         batch = values[i:i+batch_size]
         cursor.executemany(insert_query, batch)
+
+def get_latest_id(cursor, table_name):
+    insert_query = f"SELECT MAX(id) AS last_id FROM {table_name};"
