@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `tfm_database`.`inmueble`(
     `terraza` TINYINT NULL DEFAULT NULL,
     `balcon` TINYINT NULL DEFAULT NULL,
     `piscina` TINYINT NULL DEFAULT NULL,
-    `num_fotos` INT NULL DEFAULT NULL,
     `estado` VARCHAR(255) NULL DEFAULT NULL,
     `orientacion` VARCHAR(255) NULL DEFAULT NULL,
     PRIMARY KEY (`id_inmueble`),
