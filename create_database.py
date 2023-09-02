@@ -20,6 +20,6 @@ def create_database():
             cursor.execute(sql_command)
             connection.commit()
 
-        print("\n--Base de datos creada correctamente--")
+        print("\n--Base de datos creada correctamente--\n")
     except pymysql.OperationalError:
-        print("\n--No existe la Base de datos--")
+        print("\n--No existe la Base de datos--\n")

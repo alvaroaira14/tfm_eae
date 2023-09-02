@@ -3,7 +3,7 @@ def etl1():
     from unidecode import unidecode
     import pymysql
     from funciones import insert_data, change_values
-
+    pd.options.mode.chained_assignment = None
     df = pd.read_csv("../tfm_datos/houses_Madrid.csv", index_col="Unnamed: 0")
 
     orientation_df = df[["id", "is_orientation_north", "is_orientation_west", "is_orientation_south", "is_orientation_east"]].fillna(False)
@@ -133,19 +133,19 @@ def etl1():
     ############################## INSERT DATA ##############################
     conn = pymysql.connect(host='localhost', user='tfm_user', password='tfmdatabase1234', db='tfm_database')
     cursor = conn.cursor()
-    print("\n--conexion con la base de datos establecida--\n")
+    print("\n--Conexion con la base de datos establecida--\n")
     cursor = conn.cursor()
     insert_data(df_direccion, "direccion", cursor)
     conn.commit()
-    print("\n--inserción datos tabla direccion completado--\n")
+    print("\n--Inserción datos tabla direccion completado--\n")
     cursor = conn.cursor()
     insert_data(df_plataforma, "plataforma", cursor)
     conn.commit()
-    print("\n--inserción datos tabla plataforma completado--\n")
+    print("\n--Inserción datos tabla plataforma completado--\n")
     insert_data(df_inmueble, "inmueble", cursor)
     conn.commit()
-    print("\n--inserción datos tabla inmueble completado--\n")
+    print("\n--Inserción datos tabla inmueble completado--\n")
     cursor = conn.cursor()
     insert_data(df_anuncio, "anuncio", cursor)
     conn.commit()
-    print("\n--inserción datos tabla anuncio completado--\n")
+    print("\n--Inserción datos tabla anuncio completado--\n")
