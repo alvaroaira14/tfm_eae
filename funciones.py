@@ -57,3 +57,16 @@ def change_values(dataframe):
 
     
     return dataframe
+
+def prepare_datasets(X, y):
+    from sklearn.preprocessing import MinMaxScaler
+    from sklearn.model_selection import train_test_split
+
+    scaler_x = MinMaxScaler()
+    X_scale = scaler_x.fit_transform(X)
+
+    scaler_y = MinMaxScaler()
+    y_scale = scaler_y.fit_transform(y)
+    X_train, X_test, y_train, y_test = train_test_split(X_scale, y_scale, test_size=0.3)
+
+    return scaler_x, scaler_y, X_train, X_test, y_train, y_test
