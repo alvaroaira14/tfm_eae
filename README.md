@@ -29,4 +29,4 @@
 
 ### install_spark.py
     - código python que permite instalar spark en el ordenador con la idea de implementarlo 
-      en el proceso de ETL.
+      en el proceso de ETL (no utilizado).
